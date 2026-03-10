@@ -1,80 +1,206 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuro Sustentável - Eduardo Paludo</title>
+    <title>Futuro Sustentável</title>
+    
+    <!-- Link para o CSS -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Fontes do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <header>
-        <nav>
-            <div class="logo">Sustentabilidade</div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#cenario">Cenário</a></li>
-                <li><a href="#circular">Economia</a></li>
-                <li><a href="#tecnologia">Tecnologia</a></li>
-                <li><a href="#esg">ESG</a></li>
+    <!-- CABEÇALHO - Menu de navegação fixo no topo -->
+    <header class="cabecalho">
+        <nav class="menu">
+            <div class="logo">
+                <span class="logo-texto">🌱 Futuro Sustentável</span>
+            </div>
+            <!-- Botão do menu mobile (hamburguer) -->
+            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+            <ul class="menu-lista">
+                <li><a href="#inicio" class="menu-link">Início</a></li>
+                <li><a href="#cenario" class="menu-link">Cenário</a></li>
+                <li><a href="#economia" class="menu-link">Economia Circular</a></li>
+                <li><a href="#energias" class="menu-link">Energias</a></li>
+                <li><a href="#tecnologia" class="menu-link">Tecnologia</a></li>
+                <li><a href="#esg" class="menu-link">ESG</a></li>
+                <li><a href="#consumidor" class="menu-link">Consumidor</a></li>
+                <li><a href="#final" class="menu-link">Conclusão</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- CONTEÚDO PRINCIPAL - Cada seção representa um slide -->
     <main>
-        <section id="inicio" class="hero">
-            <h1>Futuro Sustentável: O Equilíbrio Necessário</h1>
-            <p>Produção Industrial vs. Preservação Ambiental</p>
-            <span>Por: Eduardo Paludo dos Santos - 2D</span>
-        </section>
-
-        <section id="cenario" class="content-section">
-            <h2>O Cenário Atual</h2>
-            <p>O modelo de "extrair, produzir e descartar" chegou ao limite. Precisamos transitar do linear para o circular.</p>
-            <ul>
-                <li>Escassez de recursos</li>
-                <li>Mudanças climáticas</li>
-                <li>Impacto do consumo desenfreado</li>
-            </ul>
-        </section>
-
-        <section id="circular" class="content-section dark-green">
-            <h2>Economia Circular & Energia</h2>
-            <p>Reduzir, Reutilizar e Reciclar. O resíduo de uma indústria vira matéria-prima para outra.</p>
-            <p><strong>Objetivo:</strong> Eliminar o conceito de "lixo".</p>
-            
-            <h3>Matriz Energética Limpa</h3>
-            <div class="energy-cards">
-                <div class="card">Solar</div>
-                <div class="card">Eólica</div>
-                <div class="card">Biomassa</div>
-                <div class="card">Hidrogênio Verde</div>
+        <!-- SLIDE 1: Início -->
+        <section id="inicio" class="secao secao-inicio">
+            <div class="conteudo">
+                <h1 class="titulo-principal">Futuro Sustentável:<br>O Equilíbrio Necessário</h1>
+                <p class="subtitulo">Produção Industrial vs. Preservação Ambiental</p>
+                <div class="autor-card">
+                    <p class="autor">Eduardo Paludo dos Santos</p>
+                    <p class="turma">N33 • 2D • Programação</p>
+                </div>
+                <!-- Botão interativo para demonstrar JavaScript -->
+                <button class="btn-sustentavel" id="btnMensagem">🌍 Clique para uma mensagem</button>
             </div>
         </section>
 
-        <section id="tecnologia" class="content-section">
-            <h2>Tecnologia e IA a Favor do Meio Ambiente</h2>
-            <p>Como a programação e a IA ajudam?</p>
-            <ul>
-                <li>Otimização de rotas (menos combustível)</li>
-                <li>Monitoramento em tempo real (IoT)</li>
-                <li>Algoritmos de eficiência energética</li>
-            </ul>
+        <!-- SLIDE 2: Cenário Atual -->
+        <section id="cenario" class="secao secao-clara">
+            <div class="conteudo">
+                <h2 class="titulo-secao">O Cenário Atual</h2>
+                <div class="cartao-destaque">
+                    <p class="destaque-texto">O modelo de <span class="destaque">"extrair, produzir e descartar"</span> chegou ao limite.</p>
+                </div>
+                <div class="topicos">
+                    <div class="topico-item">
+                        <span class="icone">⚠️</span>
+                        <h3>Escassez de recursos</h3>
+                    </div>
+                    <div class="topico-item">
+                        <span class="icone">🌡️</span>
+                        <h3>Mudanças climáticas</h3>
+                    </div>
+                    <div class="topico-item">
+                        <span class="icone">📦</span>
+                        <h3>Consumo desenfreado</h3>
+                    </div>
+                </div>
+                <p class="transicao-texto">Precisamos transitar do linear para o circular.</p>
+            </div>
         </section>
 
-        <section id="esg" class="content-section aqua">
-            <h2>ESG e O Papel de Todos</h2>
-            <p>ESG: Sustentabilidade não é só marketing, é sobrevivência e lucro consciente.</p>
-            <p>A produção só muda se o consumo mudar. Apoie marcas locais!</p>
-            <button id="btn-mensagem">Clique para uma dose de inspiração</button>
-            <p id="msg-secreta" class="hidden">"Inovação sem sustentabilidade é retrocesso."</p>
+        <!-- SLIDE 3: Economia Circular -->
+        <section id="economia" class="secao secao-escura">
+            <div class="conteudo">
+                <h2 class="titulo-secao titulo-claro">Economia Circular</h2>
+                <div class="circulo-conceito">
+                    <div class="circulo-item vermelho">Reduzir</div>
+                    <div class="circulo-item amarelo">Reutilizar</div>
+                    <div class="circulo-item verde">Reciclar</div>
+                </div>
+                <p class="texto-destaque-claro">O resíduo de uma indústria vira matéria-prima para outra.</p>
+                <p class="objetivo"><strong>Objetivo:</strong> Eliminar o conceito de "lixo" no processo produtivo.</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: Energias Renováveis -->
+        <section id="energias" class="secao seca-verde-agua">
+            <div class="conteudo">
+                <h2 class="titulo-secao">Energias Renováveis na Produção</h2>
+                <p class="subtitulo-secao">A base da produção sustentável é a matriz energética limpa.</p>
+                <div class="grade-energias">
+                    <div class="energia-card">
+                        <span class="energia-icone">☀️</span>
+                        <h3>Solar</h3>
+                    </div>
+                    <div class="energia-card">
+                        <span class="energia-icone">💨</span>
+                        <h3>Eólica</h3>
+                    </div>
+                    <div class="energia-card">
+                        <span class="energia-icone">🌿</span>
+                        <h3>Biomassa</h3>
+                    </div>
+                    <div class="energia-card">
+                        <span class="energia-icone">💧</span>
+                        <h3>Hidrogênio Verde</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Tecnologia e IA -->
+        <section id="tecnologia" class="secao secao-clara">
+            <div class="conteudo">
+                <h2 class="titulo-secao">Como a programação e a IA ajudam?</h2>
+                <p class="subtitulo-secao">Tecnologia e IA a Favor do Meio Ambiente</p>
+                <div class="lista-tecnologias">
+                    <div class="tecnologia-item">
+                        <span class="tecnologia-numero">1</span>
+                        <p>Otimização de rotas <span class="tecnologia-desc">(menos combustível)</span></p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <span class="tecnologia-numero">2</span>
+                        <p>Monitoramento de recursos em tempo real <span class="tecnologia-desc">(IoT)</span></p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <span class="tecnologia-numero">3</span>
+                        <p>Algoritmos de eficiência energética</p>
+                    </div>
+                    <div class="tecnologia-item">
+                        <span class="tecnologia-numero">4</span>
+                        <p>Etcetera.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Papel das Empresas (ESG) -->
+        <section id="esg" class="secao secao-escura">
+            <div class="conteudo">
+                <h2 class="titulo-secao titulo-claro">O Papel das Empresas (ESG)</h2>
+                <div class="esg-container">
+                    <span class="esg-sigla">E</span>
+                    <span class="esg-sigla">S</span>
+                    <span class="esg-sigla">G</span>
+                </div>
+                <p class="texto-destaque-claro">Environmental, Social, and Governance</p>
+                <div class="frase-impacto">
+                    <p>Sustentabilidade não é só marketing, é sobrevivência e lucro consciente.</p>
+                </div>
+                <div class="topicos-esg">
+                    <p><span class="check">✓</span> Transparência</p>
+                    <p><span class="check">✓</span> Redução da pegada de carbono</p>
+                    <p><span class="check">✓</span> Responsabilidade social</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: Papel do Consumidor -->
+        <section id="consumidor" class="secao seca-verde-claro">
+            <div class="conteudo">
+                <h2 class="titulo-secao">O Papel do Consumidor</h2>
+                <p class="frase-destaque">A produção só muda se o consumo mudar.</p>
+                <div class="acoes-consumidor">
+                    <div class="acao">
+                        <span class="acao-icone">🛠️</span>
+                        <p>Escolher produtos duráveis</p>
+                    </div>
+                    <div class="acao">
+                        <span class="acao-icone">🏪</span>
+                        <p>Apoiar marcas locais</p>
+                    </div>
+                    <div class="acao">
+                        <span class="acao-icone">📢</span>
+                        <p>Cobrar políticas públicas verdes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: Conclusão -->
+        <section id="final" class="secao seca-verde-escuro">
+            <div class="conteudo">
+                <h2 class="titulo-secao titulo-claro">Muito obrigado!</h2>
+                <div class="mensagem-final">
+                    <p class="citacao">"Inovação sem sustentabilidade é retrocesso."</p>
+                    <p class="reflexao">O equilíbrio entre produção e ambiente não é um obstáculo para o progresso, é a única forma de garantir que haverá um futuro.</p>
+                </div>
+                <!-- Elemento que será interativo com JavaScript -->
+                <div class="interativo" id="areaInterativa">
+                    <p>Passe o mouse aqui para ver a mágica 🌱</p>
+                    <div class="barra-progresso" id="progresso"></div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>O equilíbrio entre produção e ambiente é a única forma de garantir o futuro.</p>
-    </footer>
-
+    <!-- Link para o JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

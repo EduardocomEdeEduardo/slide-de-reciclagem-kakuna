@@ -1,30 +1,44 @@
-/* Definição de Cores (Variáveis) */
-:root {
-    --branco: #ffffff;
-    --verde-claro: #e8f5e9;
-    --verde: #4caf50;
-    --verde-escuro: #1b5e20;
-    --verde-aqua: #00897b;
-}
-
+/* ===== RESET E CONFIGURAÇÕES GLOBAIS ===== */
+/* Remove margens e paddings padrão do navegador */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box; /* Faz com que width e height incluam padding e border */
 }
 
-/* Estilo do Menu */
-header {
+/* ===== VARIÁVEIS DE COR ===== */
+/* Criei variáveis para facilitar mudanças futuras */
+:root {
+    --branco: #ffffff;
+    --verde-claro: #e8f5e9;      /* Fundo claro */
+    --verde: #4caf50;             /* Verde principal */
+    --verde-escuro: #2e7d32;      /* Para textos importantes */
+    --verde-aqua: #a7f0e6;        /* Verde água */
+    --verde-medio: #81c784;       /* Tom médio */
+    --cinza: #333333;             /* Para textos */
+    --cinza-claro: #f5f5f5;
+}
+
+/* ===== ESTILOS GERAIS ===== */
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e legível */
+    color: var(--cinza);
+    line-height: 1.6; /* Espaçamento entre linhas */
+    overflow-x: hidden; /* Esconde rolagem horizontal */
+}
+
+/* ===== CABEÇALHO E MENU ===== */
+.cabecalho {
     background-color: var(--verde-escuro);
-    padding: 1rem;
-    position: fixed;
+    padding: 1rem 2rem;
+    position: fixed; /* Menu fixo no topo */
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Garante que fique acima de tudo */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-nav {
+.menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,90 +46,392 @@ nav {
     margin: 0 auto;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
+.logo-texto {
+    color: var(--branco);
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
-.nav-links li a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
+/* Botão do menu mobile (inicialmente escondido) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--branco);
+    font-size: 2rem;
+    cursor: pointer;
 }
 
-/* Seções de Conteúdo */
-section {
-    padding: 80px 20px;
-    min-height: 60vh;
+.menu-lista {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    list-style: none; /* Remove as bolinhas da lista */
+    gap: 1.5rem; /* Espaçamento entre itens */
+}
+
+.menu-link {
+    color: var(--branco);
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: 400;
+    transition: color 0.3s; /* Efeito suave ao passar o mouse */
+    font-size: 0.95rem;
+}
+
+.menu-link:hover {
+    color: var(--verde-aqua); /* Muda cor ao passar o mouse */
+    border-bottom: 2px solid var(--verde-aqua);
+}
+
+/* ===== SEÇÕES ===== */
+.secao {
+    min-height: 100vh; /* Cada seção ocupa a tela toda */
+    display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 80px 20px 40px; /* Padding superior por causa do menu fixo */
+}
+
+/* Cores alternadas das seções */
+.secao-clara {
+    background-color: var(--verde-claro);
+}
+
+.secao-escura {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+}
+
+.seca-verde-agua {
+    background-color: var(--verde-aqua);
+}
+
+.seca-verde-claro {
+    background-color: var(--verde-claro);
+}
+
+.seca-verde-escuro {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+}
+
+/* Container de conteúdo */
+.conteudo {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
     text-align: center;
 }
 
-.hero {
+/* ===== TÍTULOS ===== */
+.titulo-principal {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.subtitulo {
+    font-size: 1.5rem;
+    color: var(--verde);
+    margin-bottom: 2rem;
+}
+
+.titulo-secao {
+    font-size: 2.5rem;
+    color: var(--verde-escuro);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.titulo-claro {
+    color: var(--branco);
+}
+
+/* ===== CARDS E ELEMENTOS ===== */
+.autor-card {
     background-color: var(--verde-claro);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 400px;
+}
+
+.autor {
+    font-size: 1.8rem;
+    font-weight: 600;
     color: var(--verde-escuro);
 }
 
-.dark-green {
-    background-color: var(--verde-escuro);
-    color: white;
+.turma {
+    color: var(--verde);
+    font-size: 1.2rem;
 }
 
-.aqua {
-    background-color: var(--verde-aqua);
-    color: white;
-}
-
-/* Cards de Energia */
-.energy-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.card {
-    background: var(--verde);
-    padding: 15px;
-    border-radius: 8px;
-    flex: 1;
-    min-width: 150px;
-}
-
-/* Botão Interativo */
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
+/* Botão sustentável */
+.btn-sustentavel {
+    background-color: var(--verde);
+    color: var(--branco);
     border: none;
-    border-radius: 5px;
-    background: var(--verde-claro);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
     cursor: pointer;
-    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+    font-weight: 600;
 }
 
-.hidden {
-    display: none;
-    margin-top: 20px;
-    font-style: italic;
-    font-weight: bold;
+.btn-sustentavel:hover {
+    background-color: var(--verde-escuro);
+    transform: scale(1.05); /* Aumenta levemente */
 }
-footer {
-    padding: 40px 10px;
+
+/* ===== TÓPICOS E LISTAS ===== */
+.topicos {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    gap: 3rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.topico-item {
     text-align: center;
 }
 
-/* Responsividade para Celulares */
+.icone {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Círculo da economia circular */
+.circulo-conceito {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.circulo-item {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Faz o círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.vermelho { background-color: #f44336; }
+.amarelo { background-color: #ffc107; color: #333; }
+.verde { background-color: #4caf50; }
+
+/* Grade de energias */
+.grade-energias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.energia-card {
+    background-color: var(--branco);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.energia-card:hover {
+    transform: translateY(-5px);
+}
+
+.energia-icone {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Lista de tecnologias */
+.lista-tecnologias {
+    max-width: 600px;
+    margin: 3rem auto;
+}
+
+.tecnologia-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--branco);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tecnologia-numero {
+    background-color: var(--verde);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* ESG */
+.esg-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.esg-sigla {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--verde-aqua);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.topicos-esg {
+    text-align: left;
+    max-width: 300px;
+    margin: 2rem auto;
+}
+
+.check {
+    color: var(--verde-aqua);
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+/* Ações do consumidor */
+.acoes-consumidor {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.acao {
+    text-align: center;
+    max-width: 200px;
+}
+
+.acao-icone {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Conclusão */
+.mensagem-final {
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.citacao {
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--verde-aqua);
+    margin-bottom: 2rem;
+}
+
+.reflexao {
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+/* Área interativa */
+.interativo {
+    background-color: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 3rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.interativo:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.barra-progresso {
+    height: 10px;
+    width: 0%;
+    background-color: var(--verde-aqua);
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: width 0.3s;
+}
+
+/* ===== DESIGN RESPONSIVO ===== */
+/* Tablets */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Esconde menu no mobile para simplificar */
+    .menu-toggle {
+        display: block; /* Mostra botão hamburguer */
     }
-    h1 { font-size: 1.5rem; }
+
+    .menu-lista {
+        display: none; /* Esconde menu normal */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--verde-escuro);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        gap: 1rem;
+    }
+
+    .menu-lista.ativo {
+        display: flex; /* Mostra quando ativo */
+    }
+
+    .titulo-principal {
+        font-size: 2.2rem;
+    }
+
+    .subtitulo {
+        font-size: 1.2rem;
+    }
+
+    .circulo-item {
+        width: 120px;
+        height: 120px;
+        font-size: 1rem;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .titulo-principal {
+        font-size: 1.8rem;
+    }
+
+    .autor {
+        font-size: 1.4rem;
+    }
+
+    .esg-sigla {
+        font-size: 3rem;
+    }
+
+    .grade-energias {
+        grid-template-columns: 1fr;
+    }
+
+    .acoes-consumidor {
+        gap: 1.5rem;
+    }
 }
