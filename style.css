@@ -103,6 +103,14 @@ button {
     font-style: italic;
     font-weight: bold;
 }
+footer {
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 /* Responsividade para Celulares */
 @media (max-width: 768px) {
