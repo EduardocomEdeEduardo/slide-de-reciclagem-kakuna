@@ -1,0 +1,113 @@
+/* Definição de Cores (Variáveis) */
+:root {
+    --branco: #ffffff;
+    --verde-claro: #e8f5e9;
+    --verde: #4caf50;
+    --verde-escuro: #1b5e20;
+    --verde-aqua: #00897b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo do Menu */
+header {
+    background-color: var(--verde-escuro);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* Seções de Conteúdo */
+section {
+    padding: 80px 20px;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero {
+    background-color: var(--verde-claro);
+    color: var(--verde-escuro);
+}
+
+.dark-green {
+    background-color: var(--verde-escuro);
+    color: white;
+}
+
+.aqua {
+    background-color: var(--verde-aqua);
+    color: white;
+}
+
+/* Cards de Energia */
+.energy-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: var(--verde);
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Botão Interativo */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: var(--verde-claro);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Esconde menu no mobile para simplificar */
+    }
+    h1 { font-size: 1.5rem; }
+}
